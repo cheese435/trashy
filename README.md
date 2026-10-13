@@ -9,7 +9,7 @@ Click the trash to move it *away* from where your cursor is, and guide it toward
 
 You can view the live demo [here](https://cheese435.github.io/trashy/trashy.html).
 
-#TO DO
+# TO DO
 * Add assets
 * Add some sort of gameplay loop
 * Improve knick knack collection & information
