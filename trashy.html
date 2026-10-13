@@ -1,0 +1,35 @@
+<!doctype html>
+<!-- Made for Terra! (https://terra.hackclub.com/) -->
+<html>
+    <head>
+        <title>trashy!</title>
+        <!-- <link
+            rel="icon"
+            type="image/x-icon"
+            href="assets/img/favicon.ico"
+            /> -->
+        <link rel="stylesheet" href="trashy.css" />
+    </head>
+    <body id="bodyContainer">
+         <!-- TEMPLATES -->
+         <div class="trash" id="templateTrash" onclick="moveTrash(this)" draggable="false" style="visibility: hidden;">
+             <img class="trashImg" draggable="false" style="background-color: palevioletred;">
+         </div>
+        <!-- VISIBLE HTML -->
+        <div id="trashContainer">
+            <div id="binHolder">
+                <div id="bin"></div>
+            </div>
+        </div>
+        <div id="shine" draggable="false">
+            <div id="shineImgDiv">
+                <img id="shineImg" draggable="false" src="assets/img/shine.png">
+                <img id="KKImg" draggable="false">
+                <h1 id="KKText" class="text" draggable="false" style="font-size: 3vw;">staple</h1>
+                <h1 id="KKdescription" class="text" draggable="false" style="top: 47%; height: 28%;">ee</h1>
+            </div>
+        </div>
+        <div id="topBar" draggable="false"></div>
+        <script src="trashy.js"></script>
+    </body>
+</html>
