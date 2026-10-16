@@ -6,9 +6,13 @@ html {
     -webkit-user-drag: none;
     user-select: none;
     overflow: hidden;
-    background-color: rgb(219, 219, 215);
+    background-color: rgb(249, 230, 206);
     font-family: mainFont;
     /*cursor: url("assets/img/cursors/broom.png"), default;*/
+}
+@font-face {
+    font-family: mainFont;
+    src: url("assets/fonts/fredoka.ttf");
 }
 h1 {
     pointer-events: none;
@@ -19,7 +23,6 @@ h1 {
     height: 8vw;
     top: 25%;
     left: 25%;
-    background-color: paleturquoise;
     position: absolute;
     transform-origin: center;
     transition: transform 0.2s ease;
@@ -43,14 +46,13 @@ h1 {
     transform-origin: center;
 }
 #bin {
-    width: 25%;
     height: 25%;
     transform-origin: center;
-    background-color: red;
+    width: 15%;
 }
 #trashContainer {
-    width: 100%;
-    height: 95%;
+    width: 84%;
+    height: 90%;
     bottom: 0%;
     left: 0%;
     position: absolute;
@@ -58,12 +60,16 @@ h1 {
 }
 #topBar {
     width: 100%;
-    background-color:  rgb(209, 209, 199);
+    background-color: rgb(199, 121, 60);
     position: absolute;
     transform-origin: center;
-    height: 5%;
+    height: 10%;
     top: 0%;
     left: 0%;
+    border-bottom: solid;
+    border-bottom-width: 0.5vw;
+    border-bottom-color: rgb(70,33,20);
+    z-index: 5;
 }
 #shine {
     width: 100%;
@@ -101,7 +107,6 @@ h1 {
 }
 .text {
     position: relative;
-    color: black;
     z-index: 3;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -114,4 +119,236 @@ h1 {
     left: 5%;
     font-size: 1.22vw;
     padding: 0.5%;
+}
+#shopContainer {
+    background-color: rgb(199, 121, 60);
+    position: absolute;
+    transform-origin: center;
+    width: 16%;
+    right: 0%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    border-left: solid;
+    border-left-width: 0.5vw;
+    border-left-color: rgb(70,33,20);
+    height: 89.5%;
+    bottom: 0%;
+    overflow-y: scroll;
+    gap: 2%;
+    padding: 1% 0;
+    box-sizing: border-box;
+}
+.shopItem {
+    width: 90%;
+    background-color: rgb(115, 59, 17);
+    position: relative;
+    transform-origin: center;
+    cursor: pointer;
+    border-radius: 25px;
+    border: solid;
+    aspect-ratio: 3 / 1;
+    border-color: rgb(70, 33, 20);
+    border-width: 0.5vw;
+    flex: 0 0 auto;
+}
+.shopImg {
+    background-color: rgb(168, 105, 58);
+    position: absolute;
+    transform-origin: center;
+    width: 4vw;
+    height: 4vw;
+    top: 10%;
+    left: 5%;
+}
+.shopText {
+    z-index: 3;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: center;
+    color: white;
+    background-color: rgb(168, 105, 58);
+    padding: 0.5%;
+    position: absolute;
+    height: 25%;
+    top: 10%;
+    font-size: 0.75vw;
+    width: 42%;
+    right: 21%;
+}
+.soldSticker {
+    z-index: 6;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 2vw;
+    padding: 0.5%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: 0%;
+    top: 0%;
+}
+#collection {
+    background-color: rgb(199, 121, 60);
+    position: absolute;
+    transform-origin: center;
+    width: 47%;
+    height: 91%;
+    top: 7%;
+    left: 24%;
+    border: solid;
+    border-color: rgb(70, 33, 20);
+    border-width: 0.5vw;
+    border-radius: 25px;
+    z-index: 50;
+}
+#titleBar {
+    background-color: rgb(115, 59, 17);
+    position: absolute;
+    transform-origin: center;
+    width: 102%;
+    height: 12%;
+    top: -2%;
+    left: -2%;
+    border-radius: 25px;
+    overflow: visible;
+    z-index: 3;
+    border: solid;
+    border-color: rgb(70, 33, 20);
+    border-width: 0.5vw;
+}
+.paper {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    position: absolute;
+    transform-origin: center;
+    background-color: rgb(244, 202, 149);
+    height: 90%;
+    bottom: 3%;
+    width: 90%;
+    right: 4%;
+    border-radius: 25px;
+    z-index: 2;
+    border: solid;
+    border-color: rgba(70, 33, 20, 0.8);
+    border-width: 0.5vw;
+    align-content: start;
+    gap: 4%;
+    padding: 4%;
+    padding-top: 6%;
+    box-sizing: border-box;
+}
+#closeButton {
+    position: absolute;
+    transform-origin: center;
+    background-color: rgb(168, 105, 58);
+    width: 12%;
+    height: 90%;
+    bottom: 5%;
+    right: 1%;
+    border-radius: 25px;
+    overflow: visible;
+    z-index: 3;
+    cursor: pointer;
+}
+#collectionTitle {
+    color: white;
+    font-size: 3vw;
+    position: absolute;
+    transform-origin: center;
+    width: 100%;
+    height: 100%;
+    top: 20%;
+    left: 5%;
+    overflow: visible;
+    z-index: 3;
+    pointer-events: none;
+}
+#closeButtonText {
+    color: white;
+    font-size: 5vw;
+    position: absolute;
+    transform-origin: center;
+    width: 100%;
+    height: 100%;
+    bottom: 15%;
+    left: 27%;
+    overflow: visible;
+    z-index: 3;
+    pointer-events: none;
+}
+.logBook {
+    background-color: rgb(167, 110, 66);
+    position: absolute;
+    transform-origin: center;
+    border: solid;
+    border-color: rgb(70, 33, 20);
+    width: 63%;
+    height: 90%;
+    bottom: 2%;
+    left: 13%;
+    border-width: 0.20vw;
+    border-radius: 15px;
+
+}
+.logBookBar {
+    background-color: rgb(115, 59, 17);
+    position: absolute;
+    transform-origin: center;
+    overflow: visible;
+    z-index: 3;
+    border: solid;
+    border-color: rgb(70, 33, 20);
+    width: 91%;
+    height: 10%;
+    top: 20%;
+    left: 8%;
+    border-radius: 10px;
+    border-width: 0.15vw;
+}
+#logBookButton {
+    position: absolute;
+    transform-origin: center;
+    background-color: rgb(168, 105, 58);
+    overflow: visible;
+    z-index: 3;
+    cursor: pointer;
+    width: 5%;
+    height: 100%;
+    bottom: 0%;
+    left: 1%;
+    border-radius: 15px;
+}
+.collectionItem {
+    background-color: rgb(115, 59, 17);
+    position: relative;
+    aspect-ratio: 1 / 1;
+    box-sizing: border-box;
+    cursor: pointer;
+    border-radius: 25px;
+    border: solid;
+    border-color: rgb(70, 33, 20);
+    border-width: 0.5vw;
+}
+.collectionImg {
+    background-color: rgb(168, 105, 58);
+    position: absolute;
+    transform-origin: center;
+    top: 10%;
+    width: 80%;
+    height: 80%;
+    left: 10%;
+    border-radius: 15px;
+}
+#currency {
+  height: 65%;
+  top: 8%;
+  font-size: 3vw;
+  right: 1%;
+  width: 5%;
+  border-radius: 25px;
 }
