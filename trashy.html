@@ -12,25 +12,36 @@
     </head>
     <body id="bodyContainer">
          <!-- TEMPLATES -->
-         <div class="trash" id="templateTrash" onclick="moveTrash(this)" draggable="false" style="visibility: hidden;">
+         <div class="flexCenter trash" id="templateTrash" onclick="moveTrash(this)" draggable="false" style="visibility: hidden;">
              <img class="trashImg" draggable="false">
+             <img class="glow" draggable="false" src="assets/img/glow.png" style="visibility: hidden;">
          </div>
          <div class="shopItem" id="shopTemplate" style="visibility: hidden;">
              <img class="shopImg" draggable="false">
              <h1 class="shopText" id="title" draggable="false" style="width: 60%;right: 3%;"></h1>
              <h1 class="soldSticker" draggable="false" style="visibility: hidden;">SOLD OUT</h1>
              <h1 class="shopText" id="desc" style="height: 49%; top: 43%; font-size: 0.6vw;" draggable="false"></h1>
-             <h1 class="shopText" id="amountLeft" style="height: 50%; top: 44%; font-size: 1.6vw;right: 2%;width: 17%;background: none;" draggable="false"></h1>
+             <h1 class="shopText" id="price" style="height: 50%; top: 44%; font-size: 1.3vw;right: 2%;width: 17%;background: none;" draggable="false"></h1>
+         </div>
+         <div class="hover" id="hoverTemplate" style="visibility: hidden;">
+             <h1 class="hoverText" id="title" draggable="false" style="width: 60%;right: 3%; font-size: 1vw;"></h1>
+             <h1 class="hoverText" id="desc" style="height: 49%; top: 41%; font-size: 0.8vw;" draggable="false"></h1>
+             <h1 class="hoverText" id="price" draggable="false" style="width: 27%; left: 3%; height: 82%; font-size: 2.5vw;"></h1>
+             <h1 class="hoverText" id="amountLeft" style="top: 41%; font-size: 1.4vw; height: 50%; right: 2%; width: 17%; background: none;" draggable="false"></h1>
+         </div>
+         <div id="collectionTemplate" class="collectionItem" style="visibility: hidden;">
+             <img class="collectionImg" draggable="false" style="visibility: hidden;">
+             <h1 class="collectionLocked" draggable="false">?</h1>
          </div>
         <!-- VISIBLE HTML -->
         <div id="trashContainer">
-            <div id="binHolder">
+            <div id="binHolder" class="flexCenter">
                 <div id="bin">
                     <img draggable="false" src="assets/img/bin.png" style="width: 100%; height: 100%;">
                 </div>
             </div>
         </div>
-        <div id="shine" draggable="false">
+        <div id="shine" class="flexCenter" draggable="false">
             <div id="shineImgDiv">
                 <img id="shineImg" draggable="false" src="assets/img/shine.png">
                 <img id="KKImg" draggable="false">
@@ -42,17 +53,17 @@
             <h1 class="shopText" id="currency" draggable="false">$0</h1>
             <div id="logBookButton" onclick="const collection = document.getElementById('collection'); if (collection.style.visibility == 'hidden') {collection.style.visibility = 'visible'} else {collection.style.visibility = 'hidden'}">
                 <div class="logBook" style="background: rgb(209, 151, 107);">
-                    <div class="logBook" style="width: 100%; height: 100%; z-index: 10; left: -20%; top: -3%;"></div>
+                    <div class="logBook" id="displayBook" style="width: 100%; height: 100%; z-index: 10; left: -20%; top: -3%;"></div>
                     <div class="logBookBar"></div>
-                    <div class="logBookBar" style="z-index: 10; left: -4%; top: 13%; width: 75%;"></div>
+                    <div class="logBookBar" id="displayTitle" style="z-index: 10; top: 13%; width: 75%;"></div>
                     <div class="logBookBar" style="top: 41%;"></div>
-                    <div class="paper" style="top: 1%; left: 3%; border-radius: 10px; border-width: 0.15vw;"></div>
-                    <div class="paper" style="transform: rotate(4deg); z-index: 1; background-color: rgb(249, 230, 206); top: 2%; left: 11%; border-width: 0.15vw; border-radius: 10px;"></div>
+                    <div class="paper" id="displayPaper1" style="top: 1%; left: 3%; border-radius: 10px; border-width: 0.15vw;"></div>
+                    <div class="paper" id="displayPaper2" style="z-index: 1; background-color: rgb(249, 230, 206); top: 2%; left: 11%; border-width: 0.15vw; border-radius: 10px;"></div>
                 </div>
             </div>
         </div>
         <!-- SHOP -->
-        <div id="shopContainer">
+        <div id="shopContainer" class="flexCenter">
         </div>
         <!-- COLLECTION -->
         <div id="collection" style="visibility: hidden;">
@@ -62,16 +73,7 @@
                 </div>
                 <h1 id="collectionTitle">Knick Knack Collection</h1>
             </div>
-            <div class="paper">
-                <div class="collectionItem">
-                    <img src="assets/img/trash/waterBottle.png"; class="collectionImg" draggable="false">
-                </div>
-                <div class="collectionItem">
-                    <img class="collectionImg" src="assets/img/trash/waterBottle.png"; draggable="false">
-                </div>
-                <div class="collectionItem">
-                    <img class="collectionImg" src="assets/img/trash/waterBottle.png"; draggable="false">
-                </div>
+            <div class="paper" id="collectionHolder">
             </div>
             <div class="paper" style="transform: rotate(4deg); z-index: 1; background-color: rgb(249, 230, 206);"></div>
         </div>

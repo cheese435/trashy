@@ -17,33 +17,40 @@ html {
 h1 {
     pointer-events: none;
     margin: 0%;
+    text-align: center;
+    color: white;
+}
+.trash, #binHolder, .glow, #trashContainer, #topBar, #shine, #shineImgDiv, #shineImg, #KKImg, #shopContainer, .shopImg, .shopText, .soldSticker, #collection, #titleBar, .paper, #closeButton, #collectionTitle, #closeButtonText, .logBook, .logBookBar, #logBookButton, .collectionImg, .hover, .hoverText, .collectionLocked {
+    position: absolute;
+    transform-origin: center;
+}
+.flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .trash {
     width: 8vw;
     height: 8vw;
     top: 25%;
     left: 25%;
-    position: absolute;
-    transform-origin: center;
     transition: transform 0.2s ease;
-    align-items: center;
-    display: flex;
-    justify-content: center;
     cursor: pointer;
 }
 #binHolder {
     width: 100%;
     height: 100%;
-    position: absolute;
-    transform-origin: center;
-    align-items: center;
-    display: flex;
-    justify-content: center;
 }
 .trashImg {
     width: 50%;
     height: 50%;
     transform-origin: center;
+    z-index: 2;
+}
+.glow {
+    width: 70%;
+    height: 70%;
+    z-index: 1;
 }
 #bin {
     height: 25%;
@@ -53,48 +60,33 @@ h1 {
 #trashContainer {
     width: 84%;
     height: 90%;
-    bottom: 0%;
-    left: 0%;
-    position: absolute;
-    transform-origin: center;
+    bottom: 0;
+    left: 0;
 }
 #topBar {
     width: 100%;
     background-color: rgb(199, 121, 60);
-    position: absolute;
-    transform-origin: center;
     height: 10%;
-    top: 0%;
-    left: 0%;
-    border-bottom: solid;
-    border-bottom-width: 0.5vw;
-    border-bottom-color: rgb(70,33,20);
+    top: 0;
+    left: 0;
+    border-bottom: 0.5vw solid rgb(70,33,20);
     z-index: 5;
 }
 #shine {
     width: 100%;
-    position: absolute;
-    transform-origin: center;
     height: 100%;
-    top: 0%;
-    left: 0%;
-    align-items: center;
-    display: flex;
-    justify-content: center;
+    top: 0;
+    left: 0;
     transform: scale(0%);
     transition: transform 1s ease;
     pointer-events: none;
 }
 #shineImgDiv {
     width: 30vw;
-    position: absolute;
-    transform-origin: center;
     height: 30vw;
 }
 #shineImg {
     width: 100%;
-    position: absolute;
-    transform-origin: center;
     height: 100%;
 }
 #KKImg {
@@ -102,8 +94,6 @@ h1 {
     height: 50%;
     top: 25%;
     left: 25%;
-    position: absolute;
-    transform-origin: center;
 }
 .text {
     position: relative;
@@ -113,8 +103,6 @@ h1 {
     width: 89%;
     height: 14%;
     top: 10%;
-    text-align: center;
-    color: white;
     background-color: rgba(0, 0, 0, 0.7);
     left: 5%;
     font-size: 1.22vw;
@@ -122,19 +110,13 @@ h1 {
 }
 #shopContainer {
     background-color: rgb(199, 121, 60);
-    position: absolute;
-    transform-origin: center;
     width: 16%;
     right: 0%;
-    align-items: center;
-    display: flex;
     flex-direction: column;
     justify-content: start;
-    border-left: solid;
-    border-left-width: 0.5vw;
-    border-left-color: rgb(70,33,20);
+    border-left: 0.5vw solid rgb(70,33,20);
     height: 89.5%;
-    bottom: 0%;
+    bottom: 0;
     overflow-y: scroll;
     gap: 2%;
     padding: 1% 0;
@@ -143,20 +125,15 @@ h1 {
 .shopItem {
     width: 90%;
     background-color: rgb(115, 59, 17);
-    position: relative;
-    transform-origin: center;
     cursor: pointer;
     border-radius: 25px;
-    border: solid;
+    border: solid 0.5vw rgb(70,33,20);
     aspect-ratio: 3 / 1;
-    border-color: rgb(70, 33, 20);
-    border-width: 0.5vw;
     flex: 0 0 auto;
+    position: relative;
 }
 .shopImg {
     background-color: rgb(168, 105, 58);
-    position: absolute;
-    transform-origin: center;
     width: 4vw;
     height: 4vw;
     top: 10%;
@@ -166,11 +143,8 @@ h1 {
     z-index: 3;
     text-overflow: ellipsis;
     overflow: hidden;
-    text-align: center;
-    color: white;
     background-color: rgb(168, 105, 58);
     padding: 0.5%;
-    position: absolute;
     height: 25%;
     top: 10%;
     font-size: 0.75vw;
@@ -181,35 +155,26 @@ h1 {
     z-index: 6;
     text-overflow: ellipsis;
     overflow: hidden;
-    text-align: center;
-    color: white;
     background-color: rgba(0, 0, 0, 0.5);
     font-size: 2vw;
     padding: 0.5%;
-    position: absolute;
     width: 100%;
     height: 100%;
-    right: 0%;
-    top: 0%;
+    right: 0;
+    top: 0;
 }
 #collection {
     background-color: rgb(199, 121, 60);
-    position: absolute;
-    transform-origin: center;
     width: 47%;
     height: 91%;
     top: 7%;
     left: 24%;
-    border: solid;
-    border-color: rgb(70, 33, 20);
-    border-width: 0.5vw;
+    border: 0.5vw solid rgb(70,33,20);
     border-radius: 25px;
     z-index: 50;
 }
 #titleBar {
     background-color: rgb(115, 59, 17);
-    position: absolute;
-    transform-origin: center;
     width: 102%;
     height: 12%;
     top: -2%;
@@ -217,15 +182,11 @@ h1 {
     border-radius: 25px;
     overflow: visible;
     z-index: 3;
-    border: solid;
-    border-color: rgb(70, 33, 20);
-    border-width: 0.5vw;
+    border: 0.5vw solid rgb(70,33,20);
 }
 .paper {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    position: absolute;
-    transform-origin: center;
     background-color: rgb(244, 202, 149);
     height: 90%;
     bottom: 3%;
@@ -233,18 +194,15 @@ h1 {
     right: 4%;
     border-radius: 25px;
     z-index: 2;
-    border: solid;
-    border-color: rgba(70, 33, 20, 0.8);
-    border-width: 0.5vw;
+    border: 0.5vw solid rgba(70,33,20,0.8);
     align-content: start;
     gap: 4%;
     padding: 4%;
     padding-top: 6%;
     box-sizing: border-box;
+    transition: transform 0.6s ease;
 }
 #closeButton {
-    position: absolute;
-    transform-origin: center;
     background-color: rgb(168, 105, 58);
     width: 12%;
     height: 90%;
@@ -256,10 +214,7 @@ h1 {
     cursor: pointer;
 }
 #collectionTitle {
-    color: white;
     font-size: 3vw;
-    position: absolute;
-    transform-origin: center;
     width: 100%;
     height: 100%;
     top: 20%;
@@ -267,12 +222,10 @@ h1 {
     overflow: visible;
     z-index: 3;
     pointer-events: none;
+    text-align: start;
 }
 #closeButtonText {
-    color: white;
     font-size: 5vw;
-    position: absolute;
-    transform-origin: center;
     width: 100%;
     height: 100%;
     bottom: 15%;
@@ -280,46 +233,38 @@ h1 {
     overflow: visible;
     z-index: 3;
     pointer-events: none;
+    text-align: start;
 }
 .logBook {
     background-color: rgb(167, 110, 66);
-    position: absolute;
-    transform-origin: center;
-    border: solid;
-    border-color: rgb(70, 33, 20);
+    border: 0.2vw solid rgb(70,33,20);
     width: 63%;
     height: 90%;
     bottom: 2%;
     left: 13%;
-    border-width: 0.20vw;
     border-radius: 15px;
-
+    transition: transform 0.6s ease;
 }
 .logBookBar {
     background-color: rgb(115, 59, 17);
-    position: absolute;
-    transform-origin: center;
     overflow: visible;
     z-index: 3;
-    border: solid;
-    border-color: rgb(70, 33, 20);
+    border: 0.15vw solid rgb(70,33,20);
     width: 91%;
     height: 10%;
     top: 20%;
     left: 8%;
     border-radius: 10px;
-    border-width: 0.15vw;
+    transition: transform 0.6s ease, left 1.5s ease;
 }
 #logBookButton {
-    position: absolute;
-    transform-origin: center;
     background-color: rgb(168, 105, 58);
     overflow: visible;
     z-index: 3;
     cursor: pointer;
     width: 5%;
     height: 100%;
-    bottom: 0%;
+    bottom: 0;
     left: 1%;
     border-radius: 15px;
 }
@@ -330,14 +275,10 @@ h1 {
     box-sizing: border-box;
     cursor: pointer;
     border-radius: 25px;
-    border: solid;
-    border-color: rgb(70, 33, 20);
-    border-width: 0.5vw;
+    border: 0.5vw solid rgb(70,33,20);
 }
 .collectionImg {
     background-color: rgb(168, 105, 58);
-    position: absolute;
-    transform-origin: center;
     top: 10%;
     width: 80%;
     height: 80%;
@@ -345,10 +286,64 @@ h1 {
     border-radius: 15px;
 }
 #currency {
-  height: 65%;
-  top: 8%;
-  font-size: 3vw;
-  right: 1%;
-  width: 5%;
-  border-radius: 25px;
+    height: 65%;
+    top: 8%;
+    font-size: 3vw;
+    right: 1%;
+    width: 5%;
+    border-radius: 25px;
+}
+.hover {
+    width: 20%;
+    background-color: rgb(115, 59, 17);
+    border-radius: 25px;
+    aspect-ratio: 3 / 1;
+    border: 0.5vw solid rgb(70,33,20);
+    right: 17%;
+}
+.hoverText {
+    z-index: 3;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    background-color: rgb(168, 105, 58);
+    padding: 0.5%;
+    height: 25%;
+    top: 8%;
+    font-size: 0.75vw;
+    width: 42%;
+    right: 21%;
+}
+.collectionLocked {
+    z-index: 6;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 4vw;
+    padding: 0.5%;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    border-radius: 15px;
+}
+#displayPaper2 {
+    transform: rotate(4deg);
+}
+#displayTitle {
+    left: -6%;
+}
+#logBookButton:hover #displayBook {
+    transform: rotate(-6deg);
+}
+#logBookButton:hover #displayPaper1 {
+    transform: rotate(10deg);
+}
+#logBookButton:hover #displayPaper2 {
+    transform: rotate(15deg);
+}
+#logBookButton:hover #displayTitle {
+    transform: rotate(-6deg);
+    left: -8%;
+}
+#logBookButton:hover .logBookBar {
+    transform: rotate(14deg);
 }
