@@ -20,7 +20,7 @@ h1 {
     text-align: center;
     color: white;
 }
-.trash, #binHolder, .glow, #trashContainer, #topBar, #shine, #shineImgDiv, #shineImg, #KKImg, #shopContainer, .shopImg, .shopText, .soldSticker, #collection, #titleBar, .paper, #closeButton, #collectionTitle, #closeButtonText, .logBook, .logBookBar, #logBookButton, .collectionImg, .hover, .hoverText, .collectionLocked {
+.trash, #binHolder, .glow, #bgDim, .volumeButton, #volumeTxt, #trashContainer, #settingsTitle, #settingsButton, #bottomBar, #topBar, #shine, #shineImgDiv, #shineImg, #KKImg, #shopContainer, .shopImg, .shopText, .soldSticker, #collection, #titleBar, .paper, #closeButton, #collectionTitle, #closeButtonText, .logBook, .logBookBar, #logBookButton, .collectionImg, .hover, .hoverText, .collectionLocked {
     position: absolute;
     transform-origin: center;
 }
@@ -51,11 +51,20 @@ h1 {
     width: 70%;
     height: 70%;
     z-index: 1;
+    opacity: 0.4;
 }
 #bin {
-    height: 25%;
     transform-origin: center;
-    width: 15%;
+}
+#bgDim {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 49;
+    pointer-events: none;
+    transition: opacity .25s;
+    background: rgba(0, 0, 0, 0.7);
 }
 #trashContainer {
     width: 84%;
@@ -72,6 +81,47 @@ h1 {
     border-bottom: 0.5vw solid rgb(70,33,20);
     z-index: 5;
 }
+#bottomBar {
+    width: 100%;
+    background-color: rgb(199, 121, 60);
+    height: 32%;
+    bottom: -26%;
+    left: 0;
+    border-top: 0.5vw solid rgb(70,33,20);
+    z-index: 5;
+    transition: bottom 1s ease;
+}
+#settingsTitle {
+    left: 4%;
+    top: 2%;
+    font-size: 1.7vw;}
+#settingsButton {
+    background-color: rgb(168, 105, 58);
+    z-index: 3;
+    cursor: pointer;
+    border-radius: 15px;
+    width: 17%;
+    right: 1%;
+    height: 15%;
+    top: 2%;
+}
+#volumeControls {
+  height: 20%;
+}
+#volumeTxt {
+  bottom: 5%;
+  left: 19%;
+}
+.volumeButton {
+    background-color: rgb(168, 105, 58);
+    z-index: 3;
+    cursor: pointer;
+    border-radius: 15px;
+    width: 17%;
+    right: 82%;
+    bottom: 3%;
+    height: 15%;
+}
 #shine {
     width: 100%;
     height: 100%;
@@ -84,6 +134,9 @@ h1 {
 #shineImgDiv {
     width: 30vw;
     height: 30vw;
+}
+#sComplete {
+  padding-top: 17%;
 }
 #shineImg {
     width: 100%;
@@ -100,13 +153,14 @@ h1 {
     z-index: 3;
     text-overflow: ellipsis;
     overflow: hidden;
-    width: 89%;
+    width: 60%;
     height: 14%;
     top: 10%;
-    background-color: rgba(0, 0, 0, 0.7);
-    left: 5%;
+    background-color: rgba(0, 0, 0, 0.5);
+    left: 20%;
     font-size: 1.22vw;
     padding: 0.5%;
+    border-radius: 15px;
 }
 #shopContainer {
     background-color: rgb(199, 121, 60);
@@ -117,7 +171,7 @@ h1 {
     border-left: 0.5vw solid rgb(70,33,20);
     height: 89.5%;
     bottom: 0;
-    overflow-y: scroll;
+    overflow-y: hidden  ;
     gap: 2%;
     padding: 1% 0;
     box-sizing: border-box;
@@ -141,8 +195,7 @@ h1 {
 }
 .shopText {
     z-index: 3;
-    text-overflow: ellipsis;
-    overflow: hidden;
+    overflow: visible;
     background-color: rgb(168, 105, 58);
     padding: 0.5%;
     height: 25%;
@@ -164,6 +217,8 @@ h1 {
     top: 0;
 }
 #collection {
+    transition: opacity .25s;
+    pointer-events: none;
     background-color: rgb(199, 121, 60);
     width: 47%;
     height: 91%;
@@ -212,6 +267,7 @@ h1 {
     overflow: visible;
     z-index: 3;
     cursor: pointer;
+    pointer-events: visible;
 }
 #collectionTitle {
     font-size: 3vw;
@@ -286,6 +342,8 @@ h1 {
     border-radius: 15px;
 }
 #currency {
+    overflow: hidden;
+    text-overflow: ellipsis;
     height: 65%;
     top: 8%;
     font-size: 3vw;
