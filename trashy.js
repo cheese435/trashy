@@ -144,7 +144,7 @@ function spawnTrash() {
   trashImg.style.width = Math.floor(Math.random() * (maxTrashImgSize - minTrashImgSize)) + minTrashImgSize + "%"
   trashImg.style.height = trashImg.style.width
   trashImg.src = "assets/img/trash/" + trashPool[Math.floor(Math.random() * trashPool.length)] + ".png"
-  //if (Math.floor(Math.random() * KKoutOf) + 1 == 1) {
+  if (Math.floor(Math.random() * KKoutOf) + 1 == 1) {
     let type = commonPool[Math.floor(Math.random() * commonPool.length)]
     if (type == "uncommon") {
       type = uncommonPool[Math.floor(Math.random() * uncommonPool.length)]
@@ -159,7 +159,7 @@ function spawnTrash() {
     clonedTrash.querySelector(".glow").style.visibility = "visible"
     clonedTrash.onclick = () => KKclick(type, clonedTrash)
     clonedTrash.style.width = parseFloat(clonedTrash.style.width) / 2 + "vw"
-    // }
+   }
   clonedTrash.style.height = clonedTrash.style.width
   const convertedHeight = (parseFloat(clonedTrash.style.width) / 100 * innerWidth) / trashContainer.height * 100
   clonedTrash.style.left = Math.floor(Math.random() * (100 - parseFloat(clonedTrash.style.width))) + "%"
