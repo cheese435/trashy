@@ -33,7 +33,6 @@ const shopItems = {
   "moreMoneyKK": {"title": "More Money", "desc": "+1$ Per knickknack", "price": 60, "onBuy": () => {value++}, "limit": 20},
   "moreMoney": { "title": "More Money", "desc": "+2$ Per trash", "price": 80, "onBuy": () => {kkValue++}, "limit": 10},
   "biggerBin": { "title": "Increased Bin Size", "desc": "Makes the bin 1% larger!", "price": 100, "onBuy": () => {bin.style.width = (parseInt(bin.style.width) + 1) + "%"; bin.style.height = (parseInt(bin.style.height) + 2) + "%"}, "limit": 10},
-
 }
 let currency = 0
 
@@ -159,7 +158,7 @@ function spawnTrash() {
     clonedTrash.querySelector(".glow").style.visibility = "visible"
     clonedTrash.onclick = () => KKclick(type, clonedTrash)
     clonedTrash.style.width = parseFloat(clonedTrash.style.width) / 2 + "vw"
-   }
+  }
   clonedTrash.style.height = clonedTrash.style.width
   const convertedHeight = (parseFloat(clonedTrash.style.width) / 100 * innerWidth) / trashContainer.height * 100
   clonedTrash.style.left = Math.floor(Math.random() * (100 - parseFloat(clonedTrash.style.width))) + "%"
